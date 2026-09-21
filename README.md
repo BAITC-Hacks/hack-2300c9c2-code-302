@@ -40,17 +40,20 @@ track01_practice/
 git clone https://github.com/BAITC-Hacks/hack-2300c9c2-code-302.git
 cd hack-2300c9c2-code-302
 
-# классификатор обращений
+# классификатор обращений — можно с заготовленными сообщениями или своим файлом
 cd track01_practice/01_classifier
 python classify_messages.py
+python classify_messages.py my_messages.txt
 
-# фильтр алертов
+# фильтр алертов — можно с заготовленными событиями или своим файлом
 cd ../02_alert_filter
 python filter_alerts.py
+python filter_alerts.py my_events.json
 ```
 
-На Windows, если кириллица в консоли выводится некорректно, запускайте с
-`set PYTHONUTF8=1 && python <script>.py`.
+Оба скрипта сами переключают вывод в UTF-8, поэтому кириллица в консоли отображается
+корректно на любой ОС без ручной настройки. Подробнее про формат входных файлов и
+разбор известных ограничений — в README каждого упражнения.
 
 ## Команда
 

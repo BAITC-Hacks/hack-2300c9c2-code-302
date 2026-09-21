@@ -11,12 +11,14 @@ import json
 import sys
 from pathlib import Path
 
+sys.stdout.reconfigure(encoding="utf-8")
+
 
 def main() -> None:
     path = Path(sys.argv[1] if len(sys.argv) > 1 else "events.json")
     events = json.loads(path.read_text(encoding="utf-8"))
 
-    critical = [e for e in events if e.get("level") == "critical"]
+    critical = [e for e in events if e.get("level", "").lower() == "critical"]
 
     for e in critical:
         print(f"[CRITICAL] {e['event']}")
